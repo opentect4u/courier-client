@@ -23,4 +23,8 @@ export class LoginService {
            .pipe(map((res) => res.json()));
   }
 
+  isLogin(){
+    return !!localStorage.getItem('token');
+  }
+
 }
