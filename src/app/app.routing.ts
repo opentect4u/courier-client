@@ -53,6 +53,11 @@ export const routes: Routes = [
     },
     children: [
       {
+        path: 'clients',
+        canActivate: [AuthGuard],
+        loadChildren: './administrator/clients/clients.module#ClientsModule'
+      },
+      {
         path: 'base',
         canActivate: [AuthGuard],
         loadChildren: './views/base/base.module#BaseModule'

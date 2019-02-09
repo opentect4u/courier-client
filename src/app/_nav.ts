@@ -41,5 +41,17 @@ export const navItems: NavData[] = [
         icon: 'icon-puzzle'
       }
     ]
+  },
+  {
+    name: 'Administrator',
+    url: '/administrator',
+    icon: 'icon-puzzle',
+    children: [
+      {
+        name: 'Clients',
+        url: '/clients/dashboard',
+        icon: 'icon-puzzle'
+      }
+    ]
   }
 ];

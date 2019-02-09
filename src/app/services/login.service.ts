@@ -6,9 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class LoginService {
-
-  key: any;
-
+  
   constructor(private http: HttpClient) { }
 
   //For login
