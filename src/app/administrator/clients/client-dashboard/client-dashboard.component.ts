@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from '../../../services/data.service';
 
 @Component({
@@ -10,12 +11,18 @@ export class ClientDashboardComponent implements OnInit {
 
   clientsDetails: any;
 
-  constructor(private data: DataService) { }
+  constructor(private data: DataService,
+              private router: Router) { }
 
   ngOnInit() {
 
     this.data.getClients().subscribe(data => {
       this.clientsDetails = data;
+      
+      if(this.clientsDetails.token == 'No Data Found'){
+        localStorage.removeItem('token');
+        this.router.navigate(['/login']);
+      }
     });
 
   }

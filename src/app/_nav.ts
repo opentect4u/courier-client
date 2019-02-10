@@ -26,23 +26,6 @@ export const navItems: NavData[] = [
     name: 'Masters'
   },
   {
-    name: 'Base',
-    url: '/base',
-    icon: 'icon-puzzle',
-    children: [
-      {
-        name: 'Cards',
-        url: '/base/cards',
-        icon: 'icon-puzzle'
-      },
-      {
-        name: 'Carousels',
-        url: '/base/carousels',
-        icon: 'icon-puzzle'
-      }
-    ]
-  },
-  {
     name: 'Administrator',
     url: '/administrator',
     icon: 'icon-puzzle',

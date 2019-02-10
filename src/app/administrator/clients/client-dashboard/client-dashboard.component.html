@@ -6,10 +6,13 @@
     <th>PIN</th>
   </tr>
 
-  <tr *ngFor="let list of clientsDetails">
-    <td>{{list.sl_no}}</td>
-    <td>{{list.client_name}}</td>
-    <td>{{list.location}}</td>
-    <td>{{list.pin_no}}</td>
-  </tr>
+  <tbody *ngIf="clientsDetails">
+    <tr *ngFor="let list of clientsDetails">
+      <td>{{list.sl_no}}</td>
+      <td>{{list.client_name}}</td>
+      <td>{{list.location}}</td>
+      <td>{{list.pin_no}}</td>
+    </tr>
+  </tbody>
+
 </table>
