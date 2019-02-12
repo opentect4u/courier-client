@@ -49,7 +49,6 @@ export class ClientEditFormComponent implements OnInit {
     this.route.params.subscribe(params => {
       
       this.data.getClient(params['id']).subscribe(res => {
-        
         this.fGroup.setValue({
           id: res[0].sl_no,
           name: res[0].name,
@@ -64,7 +63,10 @@ export class ClientEditFormComponent implements OnInit {
   }
 
   editClient(){
-    this.dataService.editClient(this.fGroup.value);
-    this.router.navigate(['/clients/dashboard']);
+    console.log(this.fGroup.value);
+    this.dataService.editClient(this.fGroup.value).subscribe(res => {
+      this.router.navigate(['/clients/dashboard']);
+    });
+
   }
 }

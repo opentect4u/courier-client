@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataService {
 
-  uri = 'http://localhost:3000/api';
+  uri:String = 'http://localhost:3000/api';
 
   constructor(private http: HttpClient) { }
 
@@ -38,7 +38,6 @@ export class DataService {
 
   editClient(clientData){
 
-    console.log(clientData);
     const obj = {
       id: clientData.id,
       name: clientData.name,
@@ -47,7 +46,7 @@ export class DataService {
       pin: clientData.pin
     };
 
-    return this.http.post<any>(`${this.uri}/editclient/${obj.id}`, obj);
+    return this.http.put<any>(`${this.uri}/editclient`, obj);
 
   }
 }
