@@ -10,7 +10,7 @@ import { DataService } from '../../../services/data.service';
 export class ClientDashboardComponent implements OnInit {
 
   clientsDetails: any;
-
+  public id = 0;
   constructor(private data: DataService,
               private router: Router) { }
 

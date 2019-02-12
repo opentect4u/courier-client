@@ -1,20 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { DataService } from '../../../services/data.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-client-form',
-  templateUrl: './client-form.component.html',
-  styleUrls: ['./client-form.component.scss']
+  templateUrl: './client-add-form.component.html',
+  styleUrls: ['./client-add-form.component.scss']
 })
-export class ClientFormComponent implements OnInit {
+export class ClientAddFormComponent implements OnInit {
 
   fGroup: FormGroup;
   name: string = '';
   address: string = '';
   location: string = '';
   pin: string = '';
+  body: object;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,
+              private dataService: DataService,
+              private router: Router) {
 
     this.fGroup = formBuilder.group({
 
@@ -40,7 +44,8 @@ export class ClientFormComponent implements OnInit {
   }
 
   addClient(){
-    console.log(this.fGroup.value);
+    this.dataService.addClient(this.fGroup.value).subscribe();
+    this.router.navigate(['/clients/dashboard']);
   }
 
 }

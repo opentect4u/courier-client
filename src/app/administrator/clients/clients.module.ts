@@ -4,10 +4,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ClientDashboardComponent } from './client-dashboard/client-dashboard.component';
 import { clientsRoutingModule } from './clients-routing.module';
-import { ClientFormComponent } from './client-form/client-form.component';
+import { ClientAddFormComponent } from './client-add-form/client-add-form.component';
+import { ClientEditFormComponent } from './client-edit-form/client-edit-form.component';
 
 @NgModule({
-  declarations: [ClientDashboardComponent, ClientFormComponent],
+  declarations: [ClientDashboardComponent, ClientAddFormComponent, ClientEditFormComponent],
   imports: [
     CommonModule,
     clientsRoutingModule,

@@ -3,7 +3,7 @@
     <div class="col-lg-12">
       <div class="card">
         <div class="card-header">
-            <a [routerLink]="['/clients/form']" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> Add Client</a>
+            <a [routerLink]="['/clients/add']" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> Add Client</a>
         </div>
         <div class="card-body">
           <table class="table table-responsive-sm table-hover table-outline mb-0">
@@ -22,7 +22,7 @@
                 <td>{{list.client_name}}</td>
                 <td>{{list.location}}</td>
                 <td>{{list.pin_no}}</td>
-                <td><a [routerLink]="['/clients/form']"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a></td>
+                <td><a [routerLink]="['/clients/edit', list.sl_no]"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a></td>
               </tr>
             </tbody>
           </table>
