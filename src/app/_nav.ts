@@ -34,7 +34,12 @@ export const navItems: NavData[] = [
         name: 'Clients',
         url: '/clients/dashboard',
         icon: 'icon-puzzle'
-      }
+      },
+      {
+        name: 'Items',
+        url: '/items/dashboard',
+        icon: 'icon-puzzle'
+      },
     ]
   }
 ];

@@ -8,23 +8,32 @@ const routes: Routes = [
   {
     path: '',
     data: {
-      title: 'Clients'
+      title: 'Client'
     },
     children: [
       {
         path: '',
-        redirectTo: 'clients'
+        redirectTo: 'clients/dashboard'
       },
       {
         path: 'dashboard',
+        data: {
+          title: 'Dashboard'
+        },
         component: ClientDashboardComponent
       },
       {
         path: 'add',
+        data: {
+          title: 'Form'
+        },
         component: ClientAddFormComponent
       },
       {
         path: 'edit/:id',
+        data: {
+          title: 'Form'
+        },
         component: ClientEditFormComponent
       }
     ]

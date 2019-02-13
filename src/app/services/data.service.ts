@@ -11,6 +11,7 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
+  //Clients
   getClients(){
     
     return this.http.get(`${this.uri}/clients`);
@@ -47,6 +48,41 @@ export class DataService {
     };
 
     return this.http.put<any>(`${this.uri}/editclient`, obj);
+
+  }
+
+  //For Items
+
+  getItems(){
+    
+    return this.http.get(`${this.uri}/items`);
+
+  }
+
+  getItem(id){
+    
+    return this.http.get(`${this.uri}/item/${id}`);
+
+  }
+
+  addItem(itemData){
+    
+    const obj = {
+      name: itemData.name
+    };
+
+    return this.http.post<any>(`${this.uri}/additem`, obj);
+
+  }
+
+  editItem(itemData){
+
+    const obj = {
+      id: itemData.id,
+      name: itemData.name
+    };
+
+    return this.http.put<any>(`${this.uri}/edititem`, obj);
 
   }
 }

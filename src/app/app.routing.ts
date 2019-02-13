@@ -58,6 +58,10 @@ export const routes: Routes = [
         loadChildren: './administrator/clients/clients.module#ClientsModule'
       },
       {
+        path: 'items',
+        loadChildren: './administrator/items/items.module#ItemsModule'
+      },
+      {
         path: 'buttons',
         loadChildren: './views/buttons/buttons.module#ButtonsModule'
       },
