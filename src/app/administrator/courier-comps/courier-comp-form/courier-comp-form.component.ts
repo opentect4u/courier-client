@@ -30,7 +30,7 @@ export class CourierCompFormComponent implements OnInit {
       contact_person: [null, Validators.required],
       contact_no:[null, Validators.compose([
         Validators.required,
-        Validators.pattern('[0-9]'),
+        Validators.pattern(/^-?(0|[0-9]\d*)?$/),
         Validators.minLength(10),
         Validators.maxLength(10)
 

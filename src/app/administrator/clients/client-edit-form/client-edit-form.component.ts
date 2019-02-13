@@ -35,11 +35,12 @@ export class ClientEditFormComponent implements OnInit {
       location: [null, Validators.required],
       pin:[null, Validators.compose([
         Validators.required,
+        Validators.pattern(/^-?(0|[0-9]\d*)?$/),
         Validators.minLength(6),
         Validators.maxLength(6)
 
       ])]
-
+      
     });
 
   }
