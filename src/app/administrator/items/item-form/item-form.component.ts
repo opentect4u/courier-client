@@ -29,8 +29,8 @@ export class ItemFormComponent implements OnInit {
   ngOnInit() {
 
     this.route.params.subscribe(params => {
-      
-      if(params['id'] !== 'undefined'){
+
+      if(params['id']){
 
         this.data.getItem(params['id']).subscribe(res => {
 

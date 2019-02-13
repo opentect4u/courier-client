@@ -62,6 +62,10 @@ export const routes: Routes = [
         loadChildren: './administrator/items/items.module#ItemsModule'
       },
       {
+        path: 'courier-company',
+        loadChildren: './administrator/courier-comps/courier-comps.module#CourierCompsModule'
+      },
+      {
         path: 'buttons',
         loadChildren: './views/buttons/buttons.module#ButtonsModule'
       },

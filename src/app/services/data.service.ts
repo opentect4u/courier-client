@@ -85,4 +85,43 @@ export class DataService {
     return this.http.put<any>(`${this.uri}/edititem`, obj);
 
   }
+
+  //For Courier Companies
+
+  getCourierComps(){
+    return this.http.get(`${this.uri}/couriercomps`);
+  }
+
+  getCourierComp(id){
+    
+    return this.http.get(`${this.uri}/couriercomp/${id}`);
+
+  }
+
+  addCourierComp(couriercompData){
+    
+    const obj = {
+      name: couriercompData.name,
+      address: couriercompData.address,
+      contact_no: couriercompData.contact_no,
+      contact_person: couriercompData.contact_person
+    }
+
+    return this.http.post<any>(`${this.uri}/addcouriercomp`, obj);
+
+  }
+
+  editCourierComp(couriercompData){
+
+    const obj = {
+      id: couriercompData.id,
+      name: couriercompData.name,
+      address: couriercompData.address,
+      contact_no: couriercompData.contact_no,
+      contact_person: couriercompData.contact_person
+    };
+
+    return this.http.put<any>(`${this.uri}/editcouriercomp`, obj);
+
+  }
 }

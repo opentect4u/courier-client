@@ -1,0 +1,32 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-header">
+            <a [routerLink]="['/courier-company/form']" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> Add Courier Company</a>
+        </div>
+        <div class="card-body">
+          <table class="table table-responsive-sm table-hover table-outline mb-0">
+            <thead class="thead-light">
+              <tr>
+                <th>Sl No</th>
+                <th>Name</th>
+                <th>Contact No</th>
+                <th>Contact Person</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody *ngIf="details">
+              <tr *ngFor="let list of details">
+                <td>{{list.sl_no}}</td>
+                <td>{{list.name}}</td>
+                <td>{{list.contact_no}}</td>
+                <td>{{list.contact_person}}</td>
+                <td><a [routerLink]="['/courier-company/form', list.sl_no]"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

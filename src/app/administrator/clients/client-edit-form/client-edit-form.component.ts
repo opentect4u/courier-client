@@ -63,7 +63,7 @@ export class ClientEditFormComponent implements OnInit {
   }
 
   editClient(){
-    console.log(this.fGroup.value);
+    
     this.dataService.editClient(this.fGroup.value).subscribe(res => {
       this.router.navigate(['/clients/dashboard']);
     });

@@ -26,11 +26,12 @@ export class ClientAddFormComponent implements OnInit {
       address: [null, Validators.compose([
         Validators.required,
         Validators.minLength(6),
-        Validators.maxLength(100) ])
+        Validators.maxLength(600) ])
       ],
       location: [null, Validators.required],
       pin:[null, Validators.compose([
         Validators.required,
+        Validators.pattern('[0-9]'),
         Validators.minLength(6),
         Validators.maxLength(6)
 

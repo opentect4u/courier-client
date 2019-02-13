@@ -1,39 +1,39 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ItemsDashboardComponent } from './items-dashboard/items-dashboard.component';
-import { ItemFormComponent } from './item-form/item-form.component';
+import { CourierCompDashboardComponent } from './courier-comp-dashboard/courier-comp-dashboard.component';
+import { CourierCompFormComponent } from './courier-comp-form/courier-comp-form.component';
 
 const routes: Routes = [
   {
     path: '',
     data: {
-      title: 'Items'
+      title: 'Courier-Company'
     },
     children: [
       {
         path: '',
-        redirectTo: 'item/dashboard'
+        redirectTo: 'courier-company/dashboard'
       },
       {
         path: 'dashboard',
         data: {
           title: 'Dashboard'
         },
-        component: ItemsDashboardComponent
+        component: CourierCompDashboardComponent
       },
       {
         path: 'form',
         data: {
           title: 'Form'
         },
-        component: ItemFormComponent
+        component: CourierCompFormComponent
       },
       {
         path: 'form/:id',
         data: {
           title: 'Form'
         },
-        component: ItemFormComponent
+        component: CourierCompFormComponent
       }
     ]
   }
@@ -43,4 +43,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ItemsRoutingModule { }
+export class CourierCompsRoutingModule { }

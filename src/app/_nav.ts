@@ -40,6 +40,11 @@ export const navItems: NavData[] = [
         url: '/items/dashboard',
         icon: 'icon-puzzle'
       },
+      {
+        name: 'Courier Companies',
+        url: '/courier-company/dashboard',
+        icon: 'icon-puzzle'
+      },
     ]
   }
 ];
