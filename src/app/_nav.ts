@@ -15,11 +15,7 @@ export const navItems: NavData[] = [
   {
     name: 'Dashboard',
     url: '/dashboard',
-    icon: 'icon-speedometer',
-    badge: {
-      variant: 'info',
-      text: 'NEW'
-    }
+    icon: 'icon-speedometer'
   },
   {
     title: true,
@@ -45,6 +41,22 @@ export const navItems: NavData[] = [
         url: '/courier-company/dashboard',
         icon: 'icon-puzzle'
       },
+    ]
+  },
+  {
+    title: true,
+    name: 'Transaction'
+  },
+  {
+    name: 'Courier',
+    url: '/courier',
+    icon: 'icon-puzzle',
+    children: [
+      {
+        name: 'Courier Service',
+        url: '/courier-service/dashboard',
+        icon: 'icon-puzzle'
+      }
     ]
   }
 ];

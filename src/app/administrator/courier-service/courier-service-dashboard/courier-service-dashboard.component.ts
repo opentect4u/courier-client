@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { DataService } from '../../../services/data.service';
 
 @Component({
-  selector: 'app-courier-comp-dashboard',
-  templateUrl: './courier-comp-dashboard.component.html',
-  styleUrls: ['./courier-comp-dashboard.component.scss']
+  selector: 'app-courier-service-dashboard',
+  templateUrl: './courier-service-dashboard.component.html',
+  styleUrls: ['./courier-service-dashboard.component.scss']
 })
-export class CourierCompDashboardComponent implements OnInit {
+export class CourierServiceDashboardComponent implements OnInit {
 
   details: any;
 
@@ -16,7 +16,7 @@ export class CourierCompDashboardComponent implements OnInit {
 
   ngOnInit() {
 
-    this.data.getCourierComps().subscribe(data => {
+    this.data.getCourierServs().subscribe(data => {
       this.details = data;
       
       if(this.details.token == 'No Data Found'){

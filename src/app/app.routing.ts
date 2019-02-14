@@ -54,7 +54,6 @@ export const routes: Routes = [
     children: [
       {
         path: 'clients',
-        canActivate: [AuthGuard],
         loadChildren: './administrator/clients/clients.module#ClientsModule'
       },
       {
@@ -64,6 +63,10 @@ export const routes: Routes = [
       {
         path: 'courier-company',
         loadChildren: './administrator/courier-comps/courier-comps.module#CourierCompsModule'
+      },
+      {
+        path: 'courier-service',
+        loadChildren: './administrator/courier-service/courier-service.module#CourierServiceModule'
       },
       {
         path: 'buttons',

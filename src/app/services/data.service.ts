@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Injectable({
@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class DataService {
 
   uri:String = 'http://localhost:3000/api';
-
+  heraders   =  new HttpHeaders().set('content-type', 'application/json');
   constructor(private http: HttpClient) { }
 
   //Clients
@@ -122,6 +122,42 @@ export class DataService {
     };
 
     return this.http.put<any>(`${this.uri}/editcouriercomp`, obj);
+
+  }
+
+  //For Courier Companies
+
+  getMaxServId(){
+    return this.http.get(`${this.uri}/maxservid`);
+  }
+
+  getCourierServs(){
+    return this.http.get(`${this.uri}/courierservs`);
+  }
+
+  getCourierServ(id){
+    
+    return this.http.get(`${this.uri}/courierserv/${id}`);
+
+  }
+
+  addCourierServ(courierservData){
+
+    return this.http.post<any>(`${this.uri}/addcourierserv`, courierservData);
+
+  }
+
+  editCourierServ(courierservData){
+
+    const obj = {
+      id: courierservData.id,
+      name: courierservData.name,
+      address: courierservData.address,
+      contact_no: courierservData.contact_no,
+      contact_person: courierservData.contact_person
+    };
+
+    return this.http.put<any>(`${this.uri}/editcourierserv`, obj);
 
   }
 }
