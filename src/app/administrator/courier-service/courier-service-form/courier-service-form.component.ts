@@ -26,6 +26,7 @@ export class CourierServiceFormComponent implements OnInit {
     this.fGroup = formBuilder.group({
       sl_no: [],
       doc_no: [],
+      receive_dt: [],
       cname: [null, Validators.required ],
       date: [null, Validators.required ],
       trans_type: [null, Validators.required],
@@ -56,6 +57,7 @@ export class CourierServiceFormComponent implements OnInit {
           this.fGroup.setValue({
             sl_no: res[0].sl_no,
             doc_no: res[0].doc_no,
+            receive_dt: [res[0].receive_dt],
             cname: res[0].client_id,
             date: res[0].trans_dt,
             trans_type: res[0].trans_type,
@@ -114,7 +116,7 @@ export class CourierServiceFormComponent implements OnInit {
     }
     else{
 
-      this.fGroup.controls['status'].setValue('In');
+      this.fGroup.controls['status'].setValue('IN');
       this.fGroup.controls['doc_no'].setValue('');
 
       this.flag = false;

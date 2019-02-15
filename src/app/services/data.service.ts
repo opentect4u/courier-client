@@ -131,8 +131,8 @@ export class DataService {
     return this.http.get(`${this.uri}/maxservid`);
   }
 
-  getCourierServs(){
-    return this.http.get(`${this.uri}/courierservs`);
+  getCourierServs(year, month){
+    return this.http.get(`${this.uri}/courierservs/${year}/${month}`);
   }
 
   getCourierServ(id){

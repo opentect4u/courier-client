@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../../../services/data.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-courier-service-dashboard',
@@ -9,14 +10,33 @@ import { DataService } from '../../../services/data.service';
 })
 export class CourierServiceDashboardComponent implements OnInit {
 
+  fGroup: FormGroup;
   details: any;
+  month: number = new Date().getMonth() + 1;
+  year: number = new Date().getFullYear();
 
-  constructor(private data: DataService,
-              private router: Router) { }
+  constructor(
+    private data: DataService,
+    private router: Router,
+    private formBuilder: FormBuilder
+    ) { 
+
+      this.fGroup = formBuilder.group({
+        month:this.month,
+        year: this.year
+      });
+
+  }
 
   ngOnInit() {
 
-    this.data.getCourierServs().subscribe(data => {
+    this.currentMonthDetails(this.year, this.month);
+
+  }
+
+  currentMonthDetails(year, month){
+
+    this.data.getCourierServs(year, month).subscribe(data => {
       
       this.details = data;
       
@@ -26,7 +46,14 @@ export class CourierServiceDashboardComponent implements OnInit {
       }
 
     });
+  }
 
+  onMonthChange(){
+
+    this.currentMonthDetails(this.fGroup.controls['year'].value,
+                             this.fGroup.controls['month'].value);
+
+    
   }
 
   delete(id){

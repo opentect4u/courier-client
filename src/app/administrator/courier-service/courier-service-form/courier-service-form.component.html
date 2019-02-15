@@ -44,8 +44,8 @@
               <div class="col-sm-6">
 
                 <select class="form-control" formControlName="trans_type" (click)="clicked()">
-                  <option value="I">In</option>
-                  <option value="O">Out</option>
+                  <option value="I">IN</option>
+                  <option value="O">OUT</option>
                 </select>
                 
               </div>
@@ -64,6 +64,36 @@
               <div class="col-sm-6">
 
                 <input type="text" class="form-control" formControlName="doc_no">
+                
+              </div>
+            
+            </div>
+
+            <div class="form-group row" *ngIf="flag">
+
+              <label class="col-sm-2 col-form-label">Status:</label>
+
+              <div class="col-sm-6">
+
+                <select class="form-control" formControlName="status">
+                    
+                    <option value="INTRANSIT">INTRANSIT</option>
+                    <option value="RECEIVED">RECEIVED</option>
+                    <option value="REJECTED">REJECTED</option>
+                
+                </select>
+
+              </div>
+            
+            </div>
+
+            <div class="form-group row" *ngIf="flag">
+
+              <label class="col-sm-2 col-form-label">Received Date:</label>
+
+              <div class="col-sm-6">
+
+                <input type="date" class="form-control" formControlName="receive_dt">
                 
               </div>
             
