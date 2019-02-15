@@ -141,7 +141,6 @@
 
               <div class="col-sm-4">
                 
-                <div style="color:red;" *ngIf="fGroup.controls.phn_no.hasError('required') && fGroup.controls['phn_no'].touched ">This Field id Required</div>
                 <div style="color:red;" *ngIf="fGroup.controls.phn_no.hasError('pattern') ">Numbers Only</div>
                 <div style="color:red;" *ngIf="fGroup.controls.phn_no.hasError('minlength') ">Min Lenght 10</div>
                 <div style="color:red;" *ngIf="fGroup.controls.phn_no.hasError('maxlength') ">Max Lenght 10</div>
@@ -156,12 +155,12 @@
 
               <div class="col-sm-6">
 
-                <input type="text" class="form-control" formControlName="received_by">
+                <input type="text" class="form-control" formControlName="receiver_or_sender">
                 
               </div>
 
               <div class="col-sm-4">
-                <div style="color:red;" *ngIf="fGroup.controls.received_by.hasError('required') && fGroup.controls['received_by'].touched ">This Field id Required</div>
+                <div style="color:red;" *ngIf="fGroup.controls.receiver_or_sender.hasError('required') && fGroup.controls['receiver_or_sender'].touched ">This Field id Required</div>
               </div>
             
             </div>

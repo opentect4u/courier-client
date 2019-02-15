@@ -17,6 +17,7 @@ export class CourierServiceDashboardComponent implements OnInit {
   ngOnInit() {
 
     this.data.getCourierServs().subscribe(data => {
+      
       this.details = data;
       
       if(this.details.token == 'No Data Found'){
@@ -26,6 +27,21 @@ export class CourierServiceDashboardComponent implements OnInit {
 
     });
 
+  }
+
+  delete(id){
+    
+    if(confirm('Are You Sure?')){
+      this.data.deleteCourierServ(id).subscribe((res) => {
+      
+        for(let i = 0; i < this.details.length; i++ ){
+          if(this.details[i]['sl_no'] == id){
+            this.details.splice(i, id);
+          }
+        }
+      });
+    }
+    
   }
 
 }

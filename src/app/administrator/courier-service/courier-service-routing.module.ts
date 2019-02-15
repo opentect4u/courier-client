@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CourierServiceDashboardComponent } from './courier-service-dashboard/courier-service-dashboard.component';
-import { CourierServiceInComponent } from './courier-service-in/courier-service-in.component';
+import { CourierServiceFormComponent } from './courier-service-form/courier-service-form.component';
 import { CourierServiceOutComponent } from './courier-service-out/courier-service-out.component';
 
 const routes: Routes = [
@@ -23,11 +23,18 @@ const routes: Routes = [
         component: CourierServiceDashboardComponent
       },
       {
-        path: 'in',
+        path: 'form',
         data: {
-          title: 'In'
+          title: 'Form'
         },
-        component: CourierServiceInComponent
+        component: CourierServiceFormComponent
+      },
+      {
+        path: 'form/:id',
+        data: {
+          title: 'Form'
+        },
+        component: CourierServiceFormComponent
       },
       {
         path: 'out/:id',

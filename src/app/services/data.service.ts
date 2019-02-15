@@ -149,15 +149,13 @@ export class DataService {
 
   editCourierServ(courierservData){
 
-    const obj = {
-      id: courierservData.id,
-      name: courierservData.name,
-      address: courierservData.address,
-      contact_no: courierservData.contact_no,
-      contact_person: courierservData.contact_person
-    };
+    return this.http.put<any>(`${this.uri}/editcourierserv`, courierservData);
 
-    return this.http.put<any>(`${this.uri}/editcourierserv`, obj);
+  }
+
+  deleteCourierServ(id){
+    
+    return this.http.delete(`${this.uri}/deletecourierserv/${id}`);
 
   }
 }

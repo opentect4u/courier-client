@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CourierServiceInComponent } from './courier-service-in.component';
+import { CourierServiceFormComponent } from './courier-service-form.component';
 
-describe('CourierServiceInComponent', () => {
-  let component: CourierServiceInComponent;
-  let fixture: ComponentFixture<CourierServiceInComponent>;
+describe('CourierServiceFormComponent', () => {
+  let component: CourierServiceFormComponent;
+  let fixture: ComponentFixture<CourierServiceFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CourierServiceInComponent ]
+      declarations: [ CourierServiceFormComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CourierServiceInComponent);
+    fixture = TestBed.createComponent(CourierServiceFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
