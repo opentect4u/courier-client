@@ -117,6 +117,8 @@ export class CourierServiceFormComponent implements OnInit {
     else{
 
       this.fGroup.controls['status'].setValue('IN');
+      this.fGroup.controls['receive_dt'].setValue('');
+      this.fGroup.controls['doc_no'].setValue('');
       this.fGroup.controls['doc_no'].setValue('');
 
       this.flag = false;
