@@ -11,46 +11,6 @@ export class DataService {
   heraders   =  new HttpHeaders().set('content-type', 'application/json');
   constructor(private http: HttpClient) { }
 
-  //Clients
-  getClients(){
-    
-    return this.http.get(`${this.uri}/clients`);
-
-  }
-
-  getClient(id){
-    
-    return this.http.get(`${this.uri}/client/${id}`);
-
-  }
-
-  addClient(clientData){
-    
-    const obj = {
-      name: clientData.name,
-      address: clientData.address,
-      location: clientData.location,
-      pin: clientData.pin
-    };
-
-    return this.http.post<any>(`${this.uri}/addclient`, obj);
-
-  }
-
-  editClient(clientData){
-
-    const obj = {
-      id: clientData.id,
-      name: clientData.name,
-      address: clientData.address,
-      location: clientData.location,
-      pin: clientData.pin
-    };
-
-    return this.http.put<any>(`${this.uri}/editclient`, obj);
-
-  }
-
   //For Items
 
   getItems(){

@@ -101,15 +101,27 @@
 
             <div class="form-group row">
 
-              <label  class="col-sm-2 col-form-label">Name:</label>
+              <label  class="col-sm-2 col-form-label">Client Name:</label>
 
               <div class="col-sm-6">
 
-                <select class="form-control" formControlName="cname">
+                <input type="text" class="form-control" formControlName="cname">
+                
+              </div>
 
-                  <option [value]="list.sl_no" *ngFor="let list of clients">{{list.client_name}}</option>
+              <div class="col-sm-4">
+                <div style="color:red;" *ngIf="fGroup.controls.cname.hasError('required') && fGroup.controls['cname'].touched ">This Field id Required</div>
+              </div>
+            
+            </div>
 
-                </select>
+            <div class="form-group row">
+
+              <label  class="col-sm-2 col-form-label">Client's Location:</label>
+
+              <div class="col-sm-6">
+
+                <input type="text" class="form-control" formControlName="location">
                 
               </div>
 

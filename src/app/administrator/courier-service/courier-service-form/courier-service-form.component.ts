@@ -28,6 +28,7 @@ export class CourierServiceFormComponent implements OnInit {
       doc_no: [],
       receive_dt: [],
       cname: [null, Validators.required ],
+      location: [null, Validators.required],
       date: [null, Validators.required ],
       trans_type: [null, Validators.required],
       item: [null, Validators.required ],
@@ -58,7 +59,8 @@ export class CourierServiceFormComponent implements OnInit {
             sl_no: res[0].sl_no,
             doc_no: res[0].doc_no,
             receive_dt: [res[0].receive_dt],
-            cname: res[0].client_id,
+            cname: res[0].client_name,
+            location: res[0].location,
             date: res[0].trans_dt,
             trans_type: res[0].trans_type,
             item: res[0].item_id,
@@ -82,12 +84,6 @@ export class CourierServiceFormComponent implements OnInit {
         });
 
       }
-
-      this.data.getClients().subscribe(res => {
-
-        this.clients = res;
-  
-      });
   
       this.data.getItems().subscribe(res => {
   
@@ -117,9 +113,8 @@ export class CourierServiceFormComponent implements OnInit {
     else{
 
       this.fGroup.controls['status'].setValue('IN');
-      this.fGroup.controls['receive_dt'].setValue('');
-      this.fGroup.controls['doc_no'].setValue('');
-      this.fGroup.controls['doc_no'].setValue('');
+      this.fGroup.controls['receive_dt'].setValue(null);
+      this.fGroup.controls['doc_no'].setValue(null);
 
       this.flag = false;
     }
