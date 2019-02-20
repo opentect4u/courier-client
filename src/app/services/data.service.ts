@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class DataService {
 
-  uri:String = 'http://localhost:3000/api';
+  uri:String = 'http://opentech4u.co.in:3000/api';
   heraders   =  new HttpHeaders().set('content-type', 'application/json');
   constructor(private http: HttpClient) { }
 

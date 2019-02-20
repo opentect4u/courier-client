@@ -12,7 +12,7 @@ export class LoginService {
   //For login
   loginUser(userDetails){
 
-    return this.http.post<any>('http://localhost:3000/api/login', userDetails);
+    return this.http.post<any>('http://opentech4u.co.in:3000/api/login', userDetails);
 
   }
 
