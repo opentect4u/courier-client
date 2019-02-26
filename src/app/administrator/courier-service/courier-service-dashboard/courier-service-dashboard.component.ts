@@ -63,7 +63,7 @@ export class CourierServiceDashboardComponent implements OnInit {
       
         for(let i = 0; i < this.details.length; i++ ){
           if(this.details[i]['sl_no'] == id){
-            this.details.splice(i, id);
+            this.details.splice(i, 1);
           }
         }
       });
