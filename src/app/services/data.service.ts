@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class DataService {
 
-  uri:String = 'http://opentech4u.co.in:3000/api';
+  uri:String = 'http://courier.synergicportal.in/api';
   heraders   =  new HttpHeaders().set('content-type', 'application/json');
   constructor(private http: HttpClient) { }
 
@@ -87,8 +87,10 @@ export class DataService {
 
   //For Courier Companies
 
-  getMaxServId(){
-    return this.http.get(`${this.uri}/maxservid`);
+  getMaxServId(date: string){
+
+    return this.http.get(`${this.uri}/maxservid/${date}`);
+  
   }
 
   getCourierServs(year, month){

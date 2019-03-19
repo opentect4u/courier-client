@@ -15,6 +15,7 @@ export class CourierServiceFormComponent implements OnInit {
   items: Object;
   comps: Object;
   flag: boolean = false;
+  updateStatus: boolean = false;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -52,7 +53,7 @@ export class CourierServiceFormComponent implements OnInit {
     this.route.params.subscribe(params => {
 
       if(params['id']){
-
+        this.updateStatus = true;
         this.data.getCourierServ(params['id']).subscribe(res => {
 
           this.fGroup.setValue({
@@ -77,7 +78,7 @@ export class CourierServiceFormComponent implements OnInit {
       }
       else{
         
-        this.data.getMaxServId().subscribe(res => {
+        this.data.getMaxServId(null).subscribe(res => {
           
           this.fGroup.controls['sl_no'].setValue(res[0].sl_no);
     
@@ -101,6 +102,26 @@ export class CourierServiceFormComponent implements OnInit {
 
   }
 
+  changedate(){
+    
+    let slNo = this.fGroup.controls['sl_no'].value;
+    let date = this.fGroup.controls['date'].value;
+    
+    if(!this.updateStatus){
+      
+      this.data.getMaxServId(date).subscribe(res => {
+        
+        if(res[0].sl_no != slNo){
+
+          this.fGroup.controls['sl_no'].setValue(res[0].sl_no);
+
+        }
+  
+      });
+
+    }
+
+  }
 
   clicked(){
 
