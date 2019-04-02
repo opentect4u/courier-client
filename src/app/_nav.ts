@@ -53,7 +53,7 @@ export const navItems: NavData[] = [
         icon: 'icon-puzzle'
       },
       {
-        name: 'Courier Service',
+        name: 'Courier Details',
         url: '/courier-service/dashboard',
         icon: 'icon-puzzle'
       }
