@@ -97,9 +97,9 @@ export class DataService {
     return this.http.get(`${this.uri}/courierservs/${year}/${month}`);
   }
 
-  getCourierServ(id){
+  getCourierServ(id, date){
     
-    return this.http.get(`${this.uri}/courierserv/${id}`);
+    return this.http.get(`${this.uri}/courierserv/${id}/${date}`);
 
   }
 

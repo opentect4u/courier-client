@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../../../services/data.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DatePipe } from '@angular/common'
 
 @Component({
   selector: 'app-courier-service-dashboard',
@@ -18,7 +19,8 @@ export class CourierServiceDashboardComponent implements OnInit {
   constructor(
     private data: DataService,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    public datepipe: DatePipe
     ) { 
 
       this.fGroup = formBuilder.group({

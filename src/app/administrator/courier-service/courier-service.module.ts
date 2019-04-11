@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { CourierServiceRoutingModule } from './courier-service-routing.module';
@@ -14,6 +14,7 @@ import { CourierServiceDashboardComponent } from './courier-service-dashboard/co
     CourierServiceRoutingModule,
     FormsModule,
     ReactiveFormsModule
-  ]
+  ],
+  providers: [DatePipe]
 })
 export class CourierServiceModule { }

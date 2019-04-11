@@ -30,7 +30,7 @@ const routes: Routes = [
         component: CourierServiceFormComponent
       },
       {
-        path: 'form/:id',
+        path: 'form/:id/:date',
         data: {
           title: 'Form'
         },

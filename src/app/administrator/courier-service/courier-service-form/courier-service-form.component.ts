@@ -54,7 +54,7 @@ export class CourierServiceFormComponent implements OnInit {
 
       if(params['id']){
         this.updateStatus = true;
-        this.data.getCourierServ(params['id']).subscribe(res => {
+        this.data.getCourierServ(params['id'], params['date']).subscribe(res => {
 
           this.fGroup.setValue({
             sl_no: res[0].sl_no,

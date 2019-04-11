@@ -50,7 +50,7 @@
                 <th>Courier Name</th>
                 <th>DOC No</th>
                 <th>Status</th>
-                <th>Action</th>
+                <th colspan="2">Action</th>
               </tr>
             </thead>
             <tbody *ngIf="details">
@@ -63,8 +63,8 @@
                 <td>{{list.courier_name}}</td>
                 <td>{{list.doc_no}}</td>
                 <td>{{list.status}}</td>
-                <td><a [routerLink]="['/courier-service/form', list.sl_no]"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
-                    
+                <td><a [routerLink]="['/courier-service/form', list.sl_no, this.datepipe.transform(list.date, 'yyyy-MM-dd')]"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a></td>
+                <td>
                     <a href="javascript:void(0)" 
                        (click)="delete(list.sl_no)"
                        style="color: #fc4b6c"
